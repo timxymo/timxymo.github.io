@@ -1,5 +1,9 @@
 let slideIndex = 1;
-let slideText = ["Sample text 1", "Sample text 2", "Sample text 3", "Sample text 4"];
+let slideText = [
+    "Mid-centry Japanese style entry way table inspired by Keith Johnson. Walnut, maple", 
+    "End grain cutting board. Jatoba, maple, purple heart.", 
+    "Oak bookshelf, Modern aesthetic with a hint of oriental retro character. ", 
+    "A simple design yet elegantly built index shelf."];
 showSlides(slideIndex);
 
 function plusSlides(n) {
