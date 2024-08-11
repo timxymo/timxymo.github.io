@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Text content for the About page
-    const aboutText = document.querySelector('.about-text');
+    // Set the image source
+    const aboutImage = document.getElementById('about-image');
+    aboutImage.src = 'images/tim-hoodoos.jpg'; // Replace with your actual image path
+
+    // Set the text content
+    const aboutText = document.getElementById('about-text');
     aboutText.innerHTML = `
         <h1>Our Story</h1>
         <p>

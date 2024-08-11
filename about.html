@@ -4,38 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us - Mo Woodworking</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .about-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .about-container img {
+            max-width: 45%;
+            border-radius: 10px;
+            margin-right: 5%;
+        }
+        .about-text {
+            max-width: 50%;
+        }
+        .about-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
-    <div id="header-container"></div>
-
     <div class="about-container">
-        <img src="images/tim-hoodoos.JPG" alt="About Us">
-        <div class="about-text">
-            <h1>Our Story</h1>
-            <p>
-                Mo Woodworking started in 2020 as a small passion project but quickly grew into a full-time business. 
-                Our love for handcrafted furniture and small items is what drives us every day to create something 
-                special for our customers.
-            </p>
-            <p>
-                Based in Portland, Oregon, we believe in sustainable and eco-friendly practices, sourcing only the 
-                finest materials for our pieces. Each item is meticulously crafted to ensure it not only meets but 
-                exceeds expectations.
-            </p>
-            <p>
-                When we are not in the workshop, we enjoy exploring the beautiful Pacific Northwest, taking inspiration 
-                from the natural beauty around us. Our journey is just beginning, and we are excited to have you be 
-                a part of it.
-            </p>
+        <img src="images/tim-hoodoos.JPG" alt="About Us" id="about-image">
+        <div class="about-text" id="about-text">
+            <!-- Text content will be loaded here by JavaScript -->
         </div>
     </div>
 
-    <script>
-        // Load header and navbar
-        document.getElementById('header-container').innerHTML = fetch('header.html')
-            .then(response => response.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
-    </script>
+    <script src="js/about.js"></script>
 </body>
 </html>
