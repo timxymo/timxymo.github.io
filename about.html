@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Mo Woodworking</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="about-container">
+        <img src="images/tim-hoodoos.JPG" alt="About Us">
+        <div class="about-text">
+            <h1>Our Story</h1>
+            <p>
+                Mo Woodworking started in 2020 as a small passion project but quickly grew into a full-time business. 
+                Our love for handcrafted furniture and small items is what drives us every day to create something 
+                special for our customers.
+            </p>
+            <p>
+                Based in Portland, Oregon, we believe in sustainable and eco-friendly practices, sourcing only the 
+                finest materials for our pieces. Each item is meticulously crafted to ensure it not only meets but 
+                exceeds expectations.
+            </p>
+            <p>
+                When we are not in the workshop, we enjoy exploring the beautiful Pacific Northwest, taking inspiration 
+                from the natural beauty around us. Our journey is just beginning, and we are excited to have you be 
+                a part of it.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Load header and navbar
+        document.getElementById('header-container').innerHTML = fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+    </script>
+</body>
+</html>
