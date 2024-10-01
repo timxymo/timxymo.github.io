@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Set the image source
     const aboutImage = document.getElementById('about-image');
-    aboutImage.src = '../images/tim-hoodoos.jpg'; 
+    aboutImage.src = '../images/tim-hoodoos.JPG'; 
 
     // Set the text content
     const aboutText = document.getElementById('about-text');
