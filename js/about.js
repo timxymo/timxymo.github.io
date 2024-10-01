@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutText.innerHTML = `
         <h1>Our Story</h1>
         <p>
-            Mo Woodworking started in 2020 as a small weekend project but quickly grew into a lifelong passion. 
+            Mo Woodworking started in 2021 as a small weekend project but quickly grew into a lifelong passion. 
             Our unwavering dedication to creating heirloom furnitures and extraordinary craftsmanship is what drives 
             us every day to create special peices for our customers that will last for generations.
         </p>
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>
             When we are not in the workshop, we're out exploring the breathtaking Sonoran Desert, drawing inspiration 
             from the state's natural splendor, rich indigenous culture, and historic Asian heritage. Our journey is just beginning, 
-            and we are excited to have you be a part of it.
+            and we are excited to have you to be a part of it.
              
         </p>
     `;

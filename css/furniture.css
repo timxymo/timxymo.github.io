@@ -4,57 +4,78 @@ body {
     margin: 0;
     padding: 0;
 }
+
 .header {
     background-color: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
 }
+
 .header h1 {
     margin: 0;
     font-family: 'Brush Script MT', cursive;
 }
+
 .navbar {
     display: flex;
     justify-content: center;
     background-color: #000;
 }
+
 .navbar a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
 }
+
 .navbar a:hover {
     background-color: #ddd;
     color: black;
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
 }
+
 .item {
     background-color: white;
     border: 2px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     margin: 15px;
-    flex-basis: calc(33.33% - 30px); /* Three items per row with some margin */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: calc(33.33% - 30px); /* Three items per row */
     max-width: calc(33.33% - 30px);
     text-align: center;
-}
+    display: flex;
+    flex-direction: column; /* Allow the image and text to stack properly */
+} 
+
+
+
 .item img {
     width: 100%;
+    height: 100%; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits and is cropped if needed */
     border-bottom: 2px solid #ccc;
+    border-radius: 5px 5px 0 0;
 }
+
 .item h3 {
     margin: 10px 0;
 }
+
 .item p {
     padding: 0 10px;
+    flex-grow: 1; /* Ensure the text takes up space */
 }
+
 .learn-more-btn {
     background-color: #00aaff;
     color: white;
@@ -66,6 +87,7 @@ body {
     text-decoration: none;
     display: inline-block;
 }
+
 .learn-more-btn:hover {
     background-color: #0088cc;
 }
