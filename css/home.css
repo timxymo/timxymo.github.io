@@ -8,11 +8,21 @@ body {
     background-color: #333;
     color: white;
     padding: 10px 0;
-    text-align: center;
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    justify-content: center; /* Center both logo and text */
 }
+
 .header h1 {
     margin: 0;
     font-family: 'Brush Script MT', cursive;
+    margin-left: 15px; /* Add some space between the logo and text */
+}
+
+/* Logo styles */
+.logo {
+    height: 50px; /* Adjust height as needed */
+    width: auto;
 }
 .navbar {
     display: flex;
