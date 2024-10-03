@@ -1,13 +1,8 @@
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -15,6 +10,11 @@ body {
     color: white;
     padding: 10px 0;
     text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-family: 'Brush Script MT', cursive;
 }
 
 .navbar {
@@ -45,10 +45,71 @@ body {
     margin: 0 auto;
 }
 
-.carousel-container {
-    width: 60%;
+.slideshow-container {
+    position: relative;
+    max-width: 60%;
 }
 
+/* Ensures all images have the same size and aspect ratio */
+.slideshow-container img {
+    width: 650px;
+    height: 100%; /* Set a fixed height */
+    object-fit: cover; /* Crop the image to fill the area while maintaining aspect ratio */
+    border-radius: 10px;
+}
+
+/* Left and right arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots for navigation */
+.dot-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Details section */
 .details {
     width: 35%;
 }
@@ -75,40 +136,4 @@ body {
 
 .back-btn:hover {
     background-color: #0088cc;
-}
-
-/* Carousel Styles */
-.carousel {
-    position: relative;
-}
-
-.slides {
-    width: 100%;
-    display: none;
-    border-radius: 10px;
-}
-
-/* Navigation Dots */
-.dots-container {
-    text-align: center;
-    padding: 10px 0;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.dot.active {
-    background-color: #717171;
-}
-
-.dot:hover {
-    background-color: #333;
 }
