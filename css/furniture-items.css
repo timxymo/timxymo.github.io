@@ -4,6 +4,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Updated header styles */
 .header {
     background-color: #333;
     color: white;
@@ -24,44 +26,50 @@ body {
     height: 50px; /* Adjust height as needed */
     width: auto;
 }
+
+
 .navbar {
     display: flex;
     justify-content: center;
     background-color: #000;
 }
+
 .navbar a {
     color: white;
     padding: 14px 20px;
     text-decoration: none;
     text-align: center;
 }
+
 .navbar a:hover {
     background-color: #ddd;
     color: black;
 }
+
+/* Main content layout */
 .content {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 140px);
-    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .slideshow-container {
     position: relative;
     max-width: 60%;
 }
-.mySlides {
-    display: none;
-    width: 100%;
-}
+
+/* Ensures all images have the same size and aspect ratio */
 .slideshow-container img {
-    width: auto;
-    height: 400px; /* Set a fixed height */
-    max-width: 100%;
-    object-fit: cover; /* Ensure the image covers the area */
+    width: 650px;
+    height: 100%; /* Set a fixed height */
+    object-fit: cover; /* Crop the image to fill the area while maintaining aspect ratio */
     border-radius: 10px;
 }
+
+/* Left and right arrows */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -76,26 +84,27 @@ body {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
+
 .prev {
     left: 0;
     border-radius: 3px 0 0 3px;
 }
+
 .next {
     right: 0;
     border-radius: 0 3px 3px 0;
 }
+
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
-.text {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-}
+
+/* Dots for navigation */
 .dot-container {
     text-align: center;
     margin-top: 20px;
 }
+
 .dot {
     cursor: pointer;
     height: 15px;
@@ -106,6 +115,64 @@ body {
     display: inline-block;
     transition: background-color 0.6s ease;
 }
+
 .active, .dot:hover {
     background-color: #717171;
 }
+
+/* Details section */
+.details {
+    width: 40%;
+}
+
+.details h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #0088cc;
+}
+/* Footer for contact section */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5em;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+.footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #0088cc;
+}
+
