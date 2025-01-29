@@ -5,17 +5,18 @@ body {
     padding: 0;
 }
 .header {
-    background-color: #333;
-    color: white;
+    font-family: "Alumni Sans Pinstripe", serif;
+    background-color: #ffffff;
+    color: #4c844c;
     padding: 10px 0;
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically center items */
-    justify-content: center; /* Center both logo and text */
+    justify-content: left; /* Center both logo and text */
 }
 
 .header h1 {
     margin: 0;
-    font-family: 'League Script'; /* Use the new font */
+    font-family: "Alumni Sans Pinstripe", serif; /* Use the new font */
     font-size: 3em; /* Adjust size as needed */
     margin-left: 15px;
 }
@@ -26,8 +27,9 @@ body {
     width: auto;
 }
 .navbar {
+    font-family: "Alumni Sans Pinstripe", serif;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: #000;
 }
 .navbar a {
