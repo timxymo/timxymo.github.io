@@ -17,8 +17,9 @@ body {
 
 .header h1 {
     margin: 0;
-    font-family: 'Brush Script MT', cursive;
-    margin-left: 15px; /* Add some space between the logo and text */
+    font-family: 'League Script'; /* Use the new font */
+    font-size: 3em; /* Adjust size as needed */
+    margin-left: 15px;
 }
 
 /* Logo styles */

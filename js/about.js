@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     aboutText.innerHTML = `
         <h1>Our Story</h1>
         <p>
-            Mo Woodworking started in 2021 as a small weekend project but quickly grew into a lifelong passion. 
+            GouMang Creations (句芒木作）started in 2021 as a small weekend project but quickly grew into a lifelong passion. 
             Our unwavering dedication to creating heirloom furnitures and extraordinary craftsmanship is what drives 
             us every day to create special peices for our customers that will last for generations.
         </p>
