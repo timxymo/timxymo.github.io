@@ -1,23 +1,24 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
 }
 
 .header {
-    background-color: #333;
-    color: white;
+    font-family: "Alumni Sans Pinstripe", serif;
+    background-color: #ffffff;
+    color: #4c844c;
     padding: 10px 0;
     display: flex; /* Use flexbox for alignment */
     align-items: center; /* Vertically center items */
-    justify-content: center; /* Center both logo and text */
+    justify-content: left; /* Center both logo and text */
 }
 
 .header h1 {
     margin: 0;
-    font-family: 'Brush Script MT', cursive;
-    margin-left: 15px; /* Add some space between the logo and text */
+    font-family: "Alumni Sans Pinstripe", serif; /*"Alumni Sans Pinstripe", serif; Use the new font */
+    font-size: 3em; /* Adjust size as needed */
+    margin-left: 15px;
 }
 
 /* Logo styles */
@@ -27,8 +28,9 @@ body {
 }
 
 .navbar {
+    font-family: "Alumni Sans Pinstripe", serif;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     background-color: #000;
 }
 
@@ -47,7 +49,7 @@ body {
 /* Make the content area larger and more spaced out */
 .about-container {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: flex-start;
     padding: 60px;
     max-width: 1400px; /* Wider page */
@@ -80,7 +82,7 @@ body {
 
 /* Footer for contact section */
 .footer {
-    background-color: #333;
+    background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
