@@ -1,0 +1,5 @@
+.hero-image img { transition: opacity .18s ease; }
+.hero-image figcaption { display:flex; justify-content:space-between; gap:18px; align-items:end; }
+.carousel-controls { display:flex; align-items:center; gap:12px; white-space:nowrap; }
+.carousel-controls button { width:28px; height:28px; padding:0; border:1px solid rgba(255,255,255,.7); background:rgba(32,32,25,.25); color:white; cursor:pointer; }
+.carousel-controls button:hover { background:rgba(255,255,255,.22); }

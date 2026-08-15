@@ -1,216 +1,55 @@
-/**
- * Tim Mo | Woodworking Portfolio - Interactive Functionality
- */
+const projects = [
+  { title: '“SMS” Whiskey Cabinet', category: 'furniture', label: 'Furniture', materials: 'Walnut, maple inlay & brass', cover: 'images/whiskey-cabinet-2.JPG', images: ['images/whiskey-cabinet-2.JPG', 'images/whiskey-cabinet-1.JPG', 'images/sms-whiskey-cabinet-detail.jpg', 'images/sms-whiskey-cabinet-angle.jpg'], description: 'A whiskey cabinet built as a gift of gratitude. Its geometric inlay follows the solution path of the Shifted Maximum Subarray algorithm, bringing personal research into the physical language of the piece.' },
+  { title: '“Tantalus” Whiskey Cabinet', category: 'furniture', label: 'Furniture', materials: 'Walnut & solid brass hinges', cover: 'images/tantalus-whiskey-cabinet-1.jpg', images: ['images/tantalus-whiskey-cabinet-1.jpg', 'images/tantalus-whiskey-cabinet-2.jpg'], description: 'A whiskey cabinet with hand-cut dovetail joints, a cove-cut front, and solid brass hinges. Made to hold good whiskey and even better moments.' },
+  { title: 'Coffee Table', category: 'furniture', label: 'Furniture', materials: 'Solid wood', cover: 'images/coffee-table-2.JPG', images: ['images/coffe-table-1.JPG', 'images/coffee-table-2.JPG', 'images/coffee-table-3.JPG'], description: 'A low, functional table built to bring warmth and a quiet focal point to a living space.' },
+  { title: 'Entryway Table', category: 'furniture', label: 'Furniture', materials: 'Solid wood', cover: 'images/entry-way-table-1.jpeg', images: ['images/entry-way-table-1.jpeg', 'images/entry-way-table-2.jpeg', 'images/entry-way-table-3.jpeg'], description: 'A custom entryway piece designed for the small rituals of arriving home.' },
+  { title: 'Desk', category: 'furniture', label: 'Furniture', materials: 'Solid wood', cover: 'images/desk-1.jpeg', images: ['images/desk-1.jpeg'], description: 'A dedicated workspace made with durable materials and an emphasis on everyday use.' },
+  { title: 'Bookshelf', category: 'storage', label: 'Storage & display', materials: 'Solid wood', cover: 'images/bookshelf-1.JPG', images: ['images/bookshelf-1.JPG', 'images/bookshelf-2.JPG', 'images/bookshelf-3.JPG', 'images/bookshelf-4.JPG', 'images/bookshelf-5.jpeg'], description: 'A bookshelf made to give books, records, and everyday objects a considered home.' },
+  { title: 'Wall Organizer', category: 'storage', label: 'Storage & display', materials: 'Solid wood', cover: 'images/wall-organizer-1.JPG', images: ['images/wall-organizer-1.JPG', 'images/wall-organizer-2.JPG', 'images/wall-organizer-3.JPG'], description: 'A compact wall organizer that puts the essentials within reach without taking over the room.' },
+  { title: 'Monitor Shelf', category: 'storage', label: 'Storage & display', materials: 'Solid wood', cover: 'images/monitor-shelf-1.jpeg', images: ['images/monitor-shelf-1.jpeg'], description: 'A clean desktop riser for a more useful and grounded workspace.' },
+  { title: 'Whiskey Humidor', category: 'objects', label: 'Small objects', materials: 'Wood & brass accents', cover: 'images/whiskey-humidor-1.jpeg', images: ['images/whiskey-humidor-1.jpeg', 'images/whiskey-humidor-2.jpeg', 'images/whiskey-humidor-3.jpeg', 'images/whiskey-humidor-4.jpeg', 'images/whiskey-humidor-5.jpeg'], description: 'A small cabinet for the ritual of a good drink, made with attention to the exterior and the details inside.' },
+  { title: 'Cutting Boards', category: 'objects', label: 'Small objects', materials: 'Hardwood', cover: 'images/cutting-board-1.jpeg', images: ['images/cutting-board-1.jpeg', 'images/cutting-board-2.jpeg', 'images/cutting-board-3.jpeg', 'images/cutting-board-4.jpeg', 'images/cutting-board-5.JPG', 'images/cutting-board-6.jpeg', 'images/cutting-board-7.jpeg'], description: 'Handmade hardwood cutting boards built for daily use in the kitchen.' },
+  { title: 'Jewelry Box', category: 'objects', label: 'Small objects', materials: 'Solid wood', cover: 'images/jewelry-box-1.JPG', images: ['images/jewelry-box-1.JPG', 'images/jewelry-box-2.JPG', 'images/jewelry-box-3.jpg', 'images/jewelry-box-4.JPG', 'images/jewelry-box-5.JPG', 'images/jewelry-box-6.JPG', 'images/jewelry-box-7.JPG'], description: 'A small keepsake box with thoughtful proportions, made to be opened and used for years.' },
+  { title: '“Sonoran” Tissue Box', category: 'objects', label: 'Small objects', materials: 'Walnut, quarter-sawn white oak & handmade tile', cover: 'images/sonoran-tissue-box-1.jpg', images: ['images/sonoran-tissue-box-1.jpg', 'images/sonoran-tissue-box-2.jpg'], description: 'A collaboration inspired by Arizona: a walnut carcass joined with half-blind dovetails, a quarter-sawn white-oak lid, and handmade ceramic tiles carrying cactus and flower impressions.' }
+];
 
- document.addEventListener('DOMContentLoaded', () => {
-    // Project Data for Lightbox Modal
-    const projectDatabase = {
-      1: {
-        title: '"SMS" Whiskey Cabinet',
-        category: 'Furniture',
-        species: 'American Black Walnut & White Oak',
-        joinery: 'Mortise & Tenon, Custom Geometric Inlays',
-        finish: 'Rubio Monocoat Pure 2C',
-        dimensions: '34" W x 16" D x 42" H',
-        image: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1000&q=80',
-        description: 'Dedicated handmade whiskey cabinet featuring geometric inlay lines inspired by the Shifted Maximum Subarray algorithm solution path. Built with solid walnut casework, custom white oak glassware dividers, and magnetic push latches.'
-      },
-      2: {
-        title: 'Coopered White Oak Bench',
-        category: 'Furniture',
-        species: 'Domestic White Oak',
-        joinery: 'Coopered Convex Seat Panel, Wedged Through-Tenons',
-        finish: 'Odie\'s Oil Satin Luster',
-        dimensions: '48" W x 14" D x 18" H',
-        image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1000&q=80',
-        description: 'An ergonomic entryway bench featuring a coopered seat panel planed to a gentle convex arc for comfort. The trestle base is secured with traditional wedged walnut through-tenons.'
-      },
-      3: {
-        title: 'Mid-Century Record Console',
-        category: 'Furniture',
-        species: 'Solid Black Walnut',
-        joinery: 'Waterfall Miter, Half-Blind Dovetail Drawers',
-        finish: 'Hand-Rubbed Danish Oil & Carnauba Wax',
-        dimensions: '56" W x 18" D x 30" H',
-        image: 'https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1000&q=80',
-        description: 'A custom Hi-Fi console featuring a continuous grain waterfall miter wrapping the casework. Includes full-extension soft-close pull-out drawers designed specifically for 12" vinyl storage.'
-      },
-      4: {
-        title: 'Mosaic End-Grain Cutting Board',
-        category: 'Home & Kitchen',
-        species: 'Hard Rock Maple, Black Walnut, Black Cherry',
-        joinery: 'Waterproof End-Grain Glue-Up (Type III)',
-        finish: 'Organic USP Mineral Oil & Beeswax Conditioner',
-        dimensions: '18" L x 12" W x 1.75" Thick',
-        image: 'https://images.unsplash.com/photo-1584269600464-37b1b58a9fe7?auto=format&fit=crop&w=1000&q=80',
-        description: 'A heavy-duty end-grain butcher block designed to preserve knife edges. Features integrated continuous hand-holds along the underside and recessed non-slip silicone feet.'
-      },
-      5: {
-        title: 'Cookie Slab Accent Table',
-        category: 'Furniture',
-        species: 'Cross-Cut White Oak Slab & Blackened Steel',
-        joinery: 'Hand-Chiseled Walnut Butterfly Inlays (Dutchmen)',
-        finish: 'Ceramic Hardwax Hybrid Finish',
-        dimensions: '22" Dia x 20" H (3.5" Thick Slab)',
-        image: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1000&q=80',
-        description: 'Preserving the natural radial checking and growth ring story of a fallen oak tree. Natural drying checks are stabilized with hand-cut walnut bowties and mounted to a minimal steel base.'
-      },
-      6: {
-        title: 'Bent Lamination Valet Tray',
-        category: 'Specialty & Inlays',
-        species: 'White Ash & Walnut Veneers',
-        joinery: '7-Layer Bent Lamination, Formed Mold',
-        finish: 'Satin Polyurethane & Natural Beeswax',
-        dimensions: '11" L x 7" W x 1.5" H',
-        image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80',
-        description: 'Sculptural tabletop tray created by laminating multiple thin hardwood veneers in a custom CNC two-part bending mold. Lined with dark micro-suede.'
-      },
-      7: {
-        title: 'Ceramic Inlay Hot Trivet',
-        category: 'Home & Kitchen',
-        species: 'Black Cherry & Handcrafted Ceramic Tile',
-        joinery: 'Precision Routed Recesses, Chamfered Edges',
-        finish: 'Heat & Water Resistant Poly-Wax',
-        dimensions: '8" x 8" x 0.875"',
-        image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=1000&q=80',
-        description: 'Designed as functional kitchen art to protect surfaces from hot cookware. The solid cherry frame surrounds a centered glazed ceramic tile.'
-      },
-      8: {
-        title: 'Lathe-Turned Hardwood Platter',
-        category: 'Specialty & Inlays',
-        species: 'Figured Ambrosia Maple',
-        joinery: 'Solid Faceplate Turning',
-        finish: 'Friction-Polished Shellac & Carnauba Wax',
-        dimensions: '14" Dia x 1.25" H',
-        image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1000&q=80',
-        description: 'Turned on the wood lathe from a dry hardwood blank. Features a beaded rim, smooth foot, and natural ambrosia figuring.'
-      }
-    };
-  
-    // Mobile Navigation Menu Toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = document.querySelectorAll('.nav-link');
-  
-    if (menuToggle && navMenu) {
-      menuToggle.addEventListener('click', () => {
-        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        menuToggle.setAttribute('aria-expanded', !isExpanded);
-        navMenu.classList.toggle('active');
-      });
-  
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          navMenu.classList.remove('active');
-          menuToggle.setAttribute('aria-expanded', 'false');
-        });
-      });
-    }
-  
-    // Portfolio Filter Functionality
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-  
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-  
-        const filterValue = btn.getAttribute('data-filter');
-  
-        projectCards.forEach(card => {
-          const cardCategory = card.getAttribute('data-category');
-          if (filterValue === 'all' || cardCategory === filterValue) {
-            card.style.display = 'flex';
-            setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'scale(1)';
-            }, 10);
-          } else {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-              card.style.display = 'none';
-            }, 200);
-          }
-        });
-      });
-    });
-  
-    // Project Modal / Lightbox Logic
-    const modal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('modal-body-content');
-    const modalCloseBtn = document.getElementById('modal-close-btn');
-  
-    const openModal = (projectId) => {
-      const data = projectDatabase[projectId];
-      if (!data || !modal || !modalBody) return;
-  
-      modalBody.innerHTML = `
-        <div class="modal-grid">
-          <div class="modal-img-col">
-            <img src="${data.image}" alt="${data.title}" class="modal-img">
-          </div>
-          <div class="modal-info-col">
-            <span class="modal-tag">${data.category}</span>
-            <h2 class="modal-title">${data.title}</h2>
-            <div class="modal-meta-chips">
-              <span class="chip">${data.species}</span>
-              <span class="chip">${data.finish}</span>
-            </div>
-            <p class="modal-desc">${data.description}</p>
-            <div class="modal-specs">
-              <div class="modal-spec-row">
-                <span class="modal-spec-label">Joinery:</span>
-                <span class="modal-spec-val">${data.joinery}</span>
-              </div>
-              <div class="modal-spec-row">
-                <span class="modal-spec-label">Dimensions:</span>
-                <span class="modal-spec-val">${data.dimensions}</span>
-              </div>
-              <div class="modal-spec-row">
-                <span class="modal-spec-label">Status:</span>
-                <span class="modal-spec-val" style="color: var(--accent-oak);">Custom Commission</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-  
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    };
-  
-    const closeModal = () => {
-      if (!modal) return;
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    };
-  
-    projectCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const id = card.getAttribute('data-id');
-        openModal(id);
-      });
-    });
-  
-    if (modalCloseBtn) {
-      modalCloseBtn.addEventListener('click', closeModal);
-    }
-  
-    if (modal) {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal();
-        }
-      });
-    }
-  
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
-  });
+const grid = document.querySelector('#project-grid');
+const modal = document.querySelector('#project-modal');
+const modalContent = document.querySelector('#modal-content');
+const closeModal = document.querySelector('.modal-close');
+
+function projectCard(project, index) {
+  return `<article class="project" data-category="${project.category}"><button class="project-trigger" type="button" data-project="${index}" aria-label="View ${project.title}"><span class="project-image"><img src="${project.cover}" alt="${project.title}"></span><span class="project-meta"><span><span class="project-title">${project.title}</span><span class="project-label">${project.label}</span></span><span class="project-open">View project ↗</span></span></button></article>`;
+}
+function renderProjects(filter = 'all') {
+  grid.innerHTML = projects.map(projectCard).join('');
+  grid.querySelectorAll('.project').forEach(project => { project.hidden = filter !== 'all' && project.dataset.category !== filter; });
+}
+function openProject(index) {
+  const project = projects[index];
+  modalContent.innerHTML = `<div class="modal-heading"><p class="eyebrow">${project.label}</p><h2 id="modal-title">${project.title}</h2><p class="modal-materials">${project.materials}</p><p class="modal-description">${project.description}</p></div><div class="gallery">${project.images.map((image, imageIndex) => `<figure class="gallery-image ${imageIndex === 0 ? 'gallery-lead' : ''}"><img src="${image}" alt="${project.title}${imageIndex ? ` detail ${imageIndex + 1}` : ''}" loading="${imageIndex > 1 ? 'lazy' : 'eager'}"></figure>`).join('')}</div>`;
+  modal.classList.add('active'); modal.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); closeModal.focus();
+}
+function dismissModal() { modal.classList.remove('active'); modal.setAttribute('aria-hidden', 'true'); document.body.classList.remove('modal-open'); }
+
+renderProjects();
+grid.addEventListener('click', event => { const trigger = event.target.closest('.project-trigger'); if (trigger) openProject(trigger.dataset.project); });
+document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); renderProjects(button.dataset.filter); }));
+closeModal.addEventListener('click', dismissModal);
+modal.addEventListener('click', event => { if (event.target === modal) dismissModal(); });
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && modal.classList.contains('active')) dismissModal(); });
+
+const heroSlides = projects.map(project => ({ image: project.cover, title: project.title }));
+const heroImage = document.querySelector('#hero-slide');
+const heroCaption = document.querySelector('#hero-caption');
+const heroCount = document.querySelector('#hero-count');
+let currentSlide = 0;
+function showHeroSlide(index) {
+  currentSlide = (index + heroSlides.length) % heroSlides.length;
+  const slide = heroSlides[currentSlide];
+  heroImage.style.opacity = '0';
+  window.setTimeout(() => { heroImage.src = slide.image; heroImage.alt = slide.title; heroCaption.textContent = slide.title; heroCount.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(heroSlides.length).padStart(2, '0')}`; heroImage.style.opacity = '1'; }, 180);
+}
+document.querySelector('#hero-previous').addEventListener('click', () => showHeroSlide(currentSlide - 1));
+document.querySelector('#hero-next').addEventListener('click', () => showHeroSlide(currentSlide + 1));
+window.setInterval(() => showHeroSlide(currentSlide + 1), 5000);
